@@ -19,3 +19,19 @@
 - Square: `P = 4a`
 - Triangle: `P = a + b + c`
 
+# L-03
+- Circle and square added  8ba9aeb
+- Docs added  d078c8d
+- Docs added  6adb962
+
+# L-04
+- Triangle added  d080c78
+- Doc updated for triangle 51c40eb
+- Add calculate.py  d76db2a
+- Update docs for calculate  b5b0fae
+- Add rectangle.py  3049431
+
+# L-05
+- Add user agreement  438b89a
+- Update Docs.Add user agreement info  86edb1c 
+
