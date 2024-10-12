@@ -35,5 +35,87 @@
 - Add user agreement  438b89a
 - Update Docs.Add user agreement info  86edb1c
 
- 
 
+* Examples of function call
+- Circle
+```
+
+def area(r):
+    return math.pi * r * r
+
+
+def perimeter(r):
+    return 2 * math.pi * r
+print(area(5),perimeter(6)
+
+```
+- Output: 78.4 37.7
+
+- Square
+```
+
+def area(a):
+    return a * a
+
+
+def perimeter(a):
+    return 4 * a
+print(area(6),perimeter(3))
+
+```
+- Output: 36 12 
+
+- Triangle
+```
+def area(a, b, c):
+    return (a + b + c) / 2
+
+
+def perimeter(a, b, c):
+    return a + b + c
+print(area(1,2,3),perimeter(4,5,6))
+
+```
+- Output: 3.0 15 	
+
+- Calculate 
+```
+
+import circle
+import square
+
+
+figs = ['circle', 'square']
+funcs = ['perimeter', 'area']
+sizes = {}
+
+def calc(fig, func, size):
+	assert fig in figs
+	assert func in funcs
+
+	result = eval(f'{fig}.{func}(*{size})')
+	print(f'{func} of {fig} is {result}')
+
+if __name__ == "__main__":
+	func = ''
+	fig = ''
+	size = list()
+    
+	while fig not in figs:
+		fig = input(f"Enter figure name, avaliable are {figs}:\n")
+	
+	while func not in funcs:
+		func = input(f"Enter function name, avaliable are {funcs}:\n")
+	
+	while len(size) != sizes.get(f"{func}-{fig}", 1):
+		size = list(map(int, input("Input figure sizes separated by space, 1 for circle and square\n").split(' ')))
+	
+	calc(fig, func, size)
+
+```
+- Input:
+- square
+- perimeter
+- 3
+- Output:
+- 12
