@@ -35,6 +35,18 @@ class TestCalc(unittest.TestCase):
         with self.assertRaises(TypeError):
             calc("circle", "perimeter", [5, 10])
 
+    def test_negative_radius(self):
+        with self.assertRaises(ValueError):
+            calc("circle", "perimeter", [-5])
+        with self.assertRaises(ValueError):
+            calc("circle", "area", [-5])
+
+    def test_negative_side(self):
+        with self.assertRaises(ValueError):
+            calc("square", "perimeter", [-5])
+        with self.assertRaises(ValueError):
+            calc("square", "area", [-5])
+
 
 if __name__ == "__main__":
     unittest.main()
