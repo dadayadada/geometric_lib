@@ -36,16 +36,21 @@ jobs:
   stage2_buildtest:
     name: Testing
     runs-on: ubuntu-latest
-    
+
+    env:
+      FULL_NAME: "Ivan Deryagin"
+      GROUP_NUMBER: "M3117"
+      GITHUB_USERNAME: ${{ github.actor }}
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
 
     - name: Print Name and Group
       run: |
-        echo "Full Name: ${{ secrets.FULL_NAME }}"
-        echo "Group Number: ${{ secrets.GROUP_NUMBER }}"
-        echo "GitHub Username: ${{ github.actor }}"
+        echo "Full Name: ${{ env.FULL_NAME }}"
+        echo "Group Number: ${{ env.GROUP_NUMBER }}"
+        echo "GitHub Username: ${{ env.GITHUB_USERNAME }}"
 
     - name: Set up Python 3.13
       uses: actions/setup-python@v2
