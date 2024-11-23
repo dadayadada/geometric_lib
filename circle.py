@@ -2,11 +2,12 @@ import math
 
 
 def area(r):
-'''принимает число r,возращает площадь оркудности радиуса r'''
+    if r < 0:
+        raise ValueError("Radius cannot be negative")
     return math.pi * r * r
 
 
 def perimeter(r):
-'''принимает число r,возращает перимитр круга радиуса r'''
+    if r < 0:
+        raise ValueError("Radius cannot be negative")
     return 2 * math.pi * r
-

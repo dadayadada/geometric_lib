@@ -1,8 +1,15 @@
 def area(a, b, c):
-'''приниммает числа a,b,c,возрашает их сумму,деленную на 2'''
-    return (a + b + c) / 2
+    if a <= 0 or b <= 0 or c <= 0:
+        raise ValueError("Side lengths must be positive")
+    if a + b <= c or a + c <= b or b + c <= a:
+        raise ValueError("The sides do not form a valid triangle")
+    s = (a + b + c) / 2
+    return (s * (s - a) * (s - b) * (s - c)) ** 0.5
 
 
 def perimeter(a, b, c):
-'''принимает числа a,b,c,возращает их сумму'''
+    if a <= 0 or b <= 0 or c <= 0:
+        raise ValueError("Side lengths must be positive")
+    if a + b <= c or a + c <= b or b + c <= a:
+        raise ValueError("The sides do not form a valid triangle")
     return a + b + c
